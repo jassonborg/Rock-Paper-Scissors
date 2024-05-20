@@ -10,11 +10,15 @@ let random = Math.floor(Math.random() * 3);
 let choice;
 
 //Assign value based on the random number
+//if random equals to 0 = Rock
 if (random === 0) {
     choice = "Rock";
-} else if (random === 1) {
+} //if random equals to 1 = Paper
+else if (random === 1) {
     choice = "Paper";
-} else if (random === 2) {
+} 
+//if random equals to 2 = Scissors
+else if (random === 2) {
     choice = "Scissors";
 }
 
