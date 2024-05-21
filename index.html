@@ -9,12 +9,17 @@
 </head>
 <body>
     <script>
-        let computerChoice = getComputerChoice();
-        console.log(computerChoice);
-        let userChoice = getHumanChoice();
-        console.log(userChoice);
-        /*let caseInsensitive = playRound();
-        console.log(playRound);*/
+        //Display Computer Choice first
+        const computerSelection = getComputerChoice();
+        console.log("Computer's choice:", computerSelection);
+
+        //Display userInput
+        const humanSelection = getHumanChoice();
+        console.log("Your choice:", humanSelection);
+
+        //Call playRound function
+        playRound(humanSelection, computerSelection);
+        
     </script>
 </body>
 </html>

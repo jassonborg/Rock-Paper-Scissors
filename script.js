@@ -7,29 +7,14 @@ let computerScore = 0;
 function getComputerChoice()
 {
 
-//Create a variable "random" to store random value
-//Randomize value from 0 to 2
-let random = Math.floor(Math.random() * 3);
-
 //Create "choice" variable to store value
-let choice;
+let choiceArray = ["rock", "paper", "scissors"];
 
-//Assign value based on the random number
-//if random equals to 0 = Rock
-if (random === 0) {
-    choice = "rock";
-} 
-//if random equals to 1 = Paper
-else if (random === 1) {
-    choice = "paper";
-} 
-//if random equals to 2 = Scissors
-else if (random === 2) {
-    choice = "scissors";
-}
+//Create a variable "random" to store random value
+let random = Math.floor(Math.random() * choiceArray.length);
 
 //Return value of choice
-return choice;
+return choiceArray[random];
 }
 
 
@@ -64,17 +49,24 @@ if (validChoices.includes(userInput)){
 
 //Create a function playRound(humanChoice, computerChoice)
 function playRound(humanChoice, computerChoice) {
-    //Compare humanChoice and computerChoice (Rock > Scissors > Paper > Rock)
+
+    //Create winning object relationship between the values
+    const winningConditions = {
+        rock: "scissors",
+        paper: "rock",
+        scissors: "paper"
+      };
+
+    //check if humanChoice parameter is equal to computerChoice
+    if (humanChoice === computerChoice) {
+        //display tie
+        console.log("It's a tie");
+    //check winningconditions object to see if userInput value beats the relationship value
+    } else if (winningConditions[humanChoice] === computerChoice) {
+        console.log("You Win");
+    } else {
+        console.log("You Lose");
+    }
   }
-  
-  //Take getHumanChoice() value and equal to humanChoice
-  const humanSelection = getHumanChoice();
-
-  //Take getComputerChoice() value and qqual to computerChoice
-  //const computerSelection = getComputerChoice();
-  
-  //playRound(humanSelection, computerSelection);
-  
-
 
 
