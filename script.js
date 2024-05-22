@@ -1,8 +1,3 @@
-//Variables for scores
-let humanScore = 0;
-let computerScore = 0;
-
-
 //Create a function getComputerChoice()
 function getComputerChoice()
 {
@@ -47,6 +42,30 @@ if (validChoices.includes(userInput)){
 }
 
 
+//Create a function playGame()
+function playGame(){
+
+//Variables
+let humanScore = 0;
+let computerScore = 0;
+let i = 0;
+
+while (i < 5){
+    //Display Computer Choice first
+    const computerSelection = getComputerChoice();
+    console.log("Computer's choice:", computerSelection);
+
+    //Display userInput
+    const humanSelection = getHumanChoice();
+    console.log("Your choice:", humanSelection);
+
+    //Call playRound function
+    playRound(humanSelection, computerSelection);
+
+    //increment i by 1
+    i++;
+}
+
 //Create a function playRound(humanChoice, computerChoice)
 function playRound(humanChoice, computerChoice) {
 
@@ -63,10 +82,15 @@ function playRound(humanChoice, computerChoice) {
         console.log("It's a tie");
     //check winningconditions object to see if userInput value beats the relationship value
     } else if (winningConditions[humanChoice] === computerChoice) {
+        //display user wins
         console.log("You Win");
+    //otherwise user lose
     } else {
+        //display user lose
         console.log("You Lose");
     }
   }
 
+
+}
 
