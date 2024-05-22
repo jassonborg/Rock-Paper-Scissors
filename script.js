@@ -41,7 +41,6 @@ if (validChoices.includes(userInput)){
 }
 }
 
-
 //Create a function playGame()
 function playGame(){
 
@@ -64,6 +63,16 @@ while (i < 5){
 
     //increment i by 1
     i++;
+
+    if (i == 5){
+        if(humanScore === computerScore){
+            console.log(`Game Over, It's a tie, You : ${humanScore}, Computer : ${computerScore}`);
+        } else if(humanScore > computerScore){
+            console.log(`Game Over, You Win, You : ${humanScore}, Computer : ${computerScore}`);
+        } else {
+            console.log(`Game Over, You Lose, You : ${humanScore}, Computer : ${computerScore}`);
+    }
+}
 }
 
 //Create a function playRound(humanChoice, computerChoice)
@@ -78,23 +87,21 @@ function playRound(humanChoice, computerChoice) {
 
     //check if humanChoice parameter is equal to computerChoice
     if (humanChoice === computerChoice) {
-        //display tie
-        console.log("It's a tie");
+        //display tie and score
+        console.log(`It's a tie, You : ${humanScore}, Computer : ${computerScore}`);
     //check winningconditions object to see if userInput value beats the relationship value
     } else if (winningConditions[humanChoice] === computerChoice) {
         //increment humanScore by 1
         humanScore++;
-        //display user wins
+        //display user wins and score
         console.log(`You Win, You : ${humanScore}, Computer : ${computerScore}`);
     //otherwise user lose
     } else {
         //increment computerScore by 1
         computerScore++;
-        //display user lose
+        //display user lose and score
         console.log(`You Lose, You : ${humanScore}, Computer : ${computerScore}`);
     }
   }
 
-
 }
-
