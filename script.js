@@ -53,11 +53,11 @@ let i = 0;
 while (i < 5){
     //Display Computer Choice first
     const computerSelection = getComputerChoice();
-    console.log("Computer's choice:", computerSelection);
+    //console.log("Computer's choice:", computerSelection);
 
     //Display userInput
     const humanSelection = getHumanChoice();
-    console.log("Your choice:", humanSelection);
+    //console.log("Your choice:", humanSelection);
 
     //Call playRound function
     playRound(humanSelection, computerSelection);
@@ -82,12 +82,16 @@ function playRound(humanChoice, computerChoice) {
         console.log("It's a tie");
     //check winningconditions object to see if userInput value beats the relationship value
     } else if (winningConditions[humanChoice] === computerChoice) {
+        //increment humanScore by 1
+        humanScore++;
         //display user wins
-        console.log("You Win");
+        console.log(`You Win, You : ${humanScore}, Computer : ${computerScore}`);
     //otherwise user lose
     } else {
+        //increment computerScore by 1
+        computerScore++;
         //display user lose
-        console.log("You Lose");
+        console.log(`You Lose, You : ${humanScore}, Computer : ${computerScore}`);
     }
   }
 
